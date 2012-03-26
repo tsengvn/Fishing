@@ -1,5 +1,46 @@
+require "sprite"
+
 -- hidden status bar
 display.setStatusBar (display.HiddenStatusBar)
+--Constants
+xcenter, ycenter = display.contentWidth*0.5,display.contentHeight*0.5
+
+
+
+function splash()
+	splashGroup = display.newGroup()
+	
+	local splashBG = display.newImage("graphics/fishinghero_flashing_v2.png", true)
+	splashGroup:insert(splashBG)
+	timer.performWithDelay(1000, levelStage )
+end
+
+function levelStage()
+	splashGroup:removeSelf()
+	levelStageGroup = display.newGroup()
+	
+	local lakeBG = display.newImage("graphics/lakebg.jpg", true)
+	levelStageGroup:insert(lakeBG)
+	
+	local fishingPoint =  display.newImage("graphics/buoy_v1.png")
+	levelStageGroup:insert(fishingPoint)
+	
+	local levelText = display.newText("Easy", 0 , 10, "Helvetica", 26 )
+	levelText.x = xcenter - levelText.width/2
+	levelText:setTextColor(0,125, 255)
+	levelStageGroup:insert(levelText)
+	
+	local sheet = sprite.newSpriteSheet("graphics/fish_sprite.png", 31, 31)
+	local spriteSet = sprite.newSpriteSet(sheet, 1, 9)
+	sprite.add( spriteSet, "fish", 1, 9, 800, 0 )
+	
+	local instance = sprite.newSprite( spriteSet )
+	instance.x = xcenter
+	instance.y = ycenter
+	instance:scale( 2, 2 )
+	instance:prepare("fish")
+	instance:play()
+end
 
 function runFish()
 		if (isStop) then
@@ -55,7 +96,7 @@ function score()
 	end
 	nextScore = fishScore.x + 0.5
 	if (nextScore > display.contentWidth ) then
-		native.showAlert( "Oops", "The fish run away")
+		native.showAlert( "Oops", "The fish run away", {"Try again"}, init)
 		stop()
 	else
 		fishScore:translate(1,0)
@@ -117,15 +158,14 @@ function setScore(number)
 	fishScore:translate(number, 0)
 end
 
-function init()
+function gameStage()
 	isStop = false
 	isRight = true
 	-- water background
 	background = display.newImage("graphics/background.jpg", true)
 	
 	-- center screen
-	xpos,ypos = display.contentWidth*0.5,display.contentHeight*0.5
-	xcenter, ycenter = xpos, ypos
+	xpos,ypos = xcenter, ycenter
 	
 	-- fish sprite
 	fish = display.newImage("fish.gif", xcenter, ycenter)
@@ -169,7 +209,7 @@ function init()
 	start()
 end
 
-init()
+splash()
 
 
 
