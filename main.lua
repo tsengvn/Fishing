@@ -10,9 +10,11 @@ Rad2Deg = 180.0 / math.pi;
 function splash()
 	splashGroup = display.newGroup()
 	
-	local splashBG = display.newImage("graphics/fishinghero_flashing_v2.png", true)
+	local splashBG = display.newImage("graphics/fishinghero_flashing_v2.png",true)
+	splashBG.xScale, splashBG.yScale = .5, .5
+	
 	splashGroup:insert(splashBG)
-	timer.performWithDelay(1000, gameStage )
+	timer.performWithDelay(2000, gameStage )
 end
 
 function levelStage()
@@ -153,6 +155,7 @@ function setScore(number)
 end
 
 function gameStage()
+	--splashGroup:removeSelf()
 	isStop = false
 	isRight = true
 	-- water background
@@ -183,8 +186,9 @@ function gameStage()
 	fishBar.xScale, fishBar.yScale = .3, .5
 	
 	-- fishScore
-	fishScore = display.newImage("fish.gif", xcenter , 0)
-	fishScore.xScale, fishScore.yScale = .8, .8
+	fishScore = display.newImage("graphics/fish_ani_0.png", xcenter , 0)
+	fishScore:scale(-1, 1)
+	--fishScore.xScale, fishScore.yScale = .2, .2
 	
 	perfectRange, greatRange, goodRange = 30, 80, 130
 	-- circle pole perfect
