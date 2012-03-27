@@ -16,6 +16,22 @@ function splash()
 end
 
 function levelStage()
+<<<<<<< HEAD
+=======
+	local sheet = sprite.newSpriteSheet("graphics/fish_sprite.png", 31, 31)
+	local spriteSet = sprite.newSpriteSet(sheet, 1, 9)
+	sprite.add( spriteSet, "fish", 1, 9, 200, 0 )
+	
+	local instance = sprite.newSprite( spriteSet )
+	instance.x = xcenter
+	instance.y = ycenter
+
+	instance:prepare("fish")
+	instance:play()
+	
+	spriteSheet:play()
+	
+>>>>>>> 6b36cbb6eb70695511692d454129fe48e9104758
 	splashGroup:removeSelf()
 	levelStageGroup = display.newGroup()
 	
@@ -29,6 +45,7 @@ function levelStage()
 	levelText.x = xcenter - levelText.width/2
 	levelText:setTextColor(0,125, 255)
 	levelStageGroup:insert(levelText)
+<<<<<<< HEAD
 	
 	local sheet = sprite.newSpriteSheet("graphics/fish_sprite.png", 31, 31)
 	local spriteSet = sprite.newSpriteSet(sheet, 1, 9)
@@ -40,6 +57,8 @@ function levelStage()
 	instance:scale( 2, 2 )
 	instance:prepare("fish")
 	instance:play()
+=======
+>>>>>>> 6b36cbb6eb70695511692d454129fe48e9104758
 end
 
 function runFish()
