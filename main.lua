@@ -4,7 +4,7 @@ require "sprite"
 display.setStatusBar (display.HiddenStatusBar)
 --Constants
 xcenter, ycenter = display.contentWidth*0.5,display.contentHeight*0.5
-
+Rad2Deg = 180.0 / math.pi;
 
 
 function splash()
@@ -12,26 +12,10 @@ function splash()
 	
 	local splashBG = display.newImage("graphics/fishinghero_flashing_v2.png", true)
 	splashGroup:insert(splashBG)
-	timer.performWithDelay(1000, levelStage )
+	timer.performWithDelay(1000, gameStage )
 end
 
 function levelStage()
-<<<<<<< HEAD
-=======
-	local sheet = sprite.newSpriteSheet("graphics/fish_sprite.png", 31, 31)
-	local spriteSet = sprite.newSpriteSet(sheet, 1, 9)
-	sprite.add( spriteSet, "fish", 1, 9, 200, 0 )
-	
-	local instance = sprite.newSprite( spriteSet )
-	instance.x = xcenter
-	instance.y = ycenter
-
-	instance:prepare("fish")
-	instance:play()
-	
-	spriteSheet:play()
-	
->>>>>>> 6b36cbb6eb70695511692d454129fe48e9104758
 	splashGroup:removeSelf()
 	levelStageGroup = display.newGroup()
 	
@@ -45,20 +29,6 @@ function levelStage()
 	levelText.x = xcenter - levelText.width/2
 	levelText:setTextColor(0,125, 255)
 	levelStageGroup:insert(levelText)
-<<<<<<< HEAD
-	
-	local sheet = sprite.newSpriteSheet("graphics/fish_sprite.png", 31, 31)
-	local spriteSet = sprite.newSpriteSet(sheet, 1, 9)
-	sprite.add( spriteSet, "fish", 1, 9, 800, 0 )
-	
-	local instance = sprite.newSprite( spriteSet )
-	instance.x = xcenter
-	instance.y = ycenter
-	instance:scale( 2, 2 )
-	instance:prepare("fish")
-	instance:play()
-=======
->>>>>>> 6b36cbb6eb70695511692d454129fe48e9104758
 end
 
 function runFish()
@@ -79,7 +49,7 @@ function runFish()
 		
 		xpos = rX + xcenter;
         ypos = rY + ycenter;
-		print (xpos)
+		--print (xpos)
 		--xpos = xpos + ( 2.2 * xdirection );
         -- ypos = ypos + ( 2.2 * ydirection );
 		
@@ -92,14 +62,19 @@ function runFish()
                 ydirection = ydirection * -1;
         end
 		--]]
+		local angle = math.atan2(ypos - fish.y, xpos - fish.x) * Rad2Deg
+		print(angle);
+		
 		
 		if (xpos - fish.x < 0 and isRight) then
-			fish:scale(-1, 1)
+			fish:scale(1, -1)
 			isRight = false
 		elseif (xpos - fish.x > 0 and not(isRight)) then
-			fish:scale(-1, 1)
+			fish:scale(1, -1)
 			isRight = true
 		end
+		
+		fish.rotation = angle
 		transition.to( fish, { time=500, xOrigin=xpos, yOrigin=ypos, onComplete=runFish})
 
         --fish:translate( xpos - fish.x, ypos - fish.y)
@@ -115,7 +90,7 @@ function score()
 	end
 	nextScore = fishScore.x + 0.5
 	if (nextScore > display.contentWidth ) then
-		native.showAlert( "Oops", "The fish run away", {"Try again"}, init)
+		native.showAlert( "Oops", "The fish run away", {"Try again"}, gameStage)
 		stop()
 	else
 		fishScore:translate(1,0)
@@ -187,9 +162,21 @@ function gameStage()
 	xpos,ypos = xcenter, ycenter
 	
 	-- fish sprite
-	fish = display.newImage("fish.gif", xcenter, ycenter)
-	fish.myName = "fish"
+	--fish = display.newImage("fish.gif", xcenter, ycenter)
+	--fish.myName = "fish"
 
+	local sheet = sprite.newSpriteSheet("graphics/fish_sprite.png", 31, 31)
+	local spriteSet = sprite.newSpriteSet(sheet, 1, 9)
+	sprite.add( spriteSet, "fish", 1, 9, 800, 0 )
+	
+	fish = sprite.newSprite( spriteSet )
+	fish.x = xcenter
+	fish.y = ycenter
+	fish:scale( 1.5 , 1.5 )
+	fish:scale(-1, 1)
+	fish:prepare("fish")
+	fish:play()
+	
 	-- fish bar
 	fishBar = display.newImage("graphics/fishing_bar_v1.png", true)
 	fishBar.x, fishBar.y = display.contentWidth*0.5,15
