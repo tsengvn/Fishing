@@ -1,4 +1,5 @@
 require "sprite"
+require "ui"
 
 -- hidden status bar
 display.setStatusBar (display.HiddenStatusBar)
@@ -10,11 +11,44 @@ Rad2Deg = 180.0 / math.pi;
 function splash()
 	splashGroup = display.newGroup()
 	
-	local splashBG = display.newImage("graphics/fishinghero_flashing_v2.png",true)
-	splashBG.xScale, splashBG.yScale = .5, .5
+	local whiteBG = display.newRect( 0 , 0 , display.contentWidth, display.contentHeight)
+	--whiteBG:setFillColor(255,255,255)
+	local splashBG = display.newImage("graphics/logo.png")
 	
+	--splashBG.xScale, splashBG.yScale = .8, .8
+	
+	--splashBG:setReferencePoint(display.BottomCenterReferencePoint)
+	splashBG.x = xcenter
+	
+	local playBt = ui.newButton{
+		default = "graphics/smallButton.png",
+		over = "graphics/smallButtonOver.png",
+		onRelease = gameStage,
+		text = "Play",
+		textColor = {255,255,255},
+		size = 16,
+		emboss = true,
+		x = xcenter,
+		y = ycenter + 50
+	}
+	
+	local shopBt = ui.newButton{
+		default = "graphics/smallButton.png",
+		over = "graphics/smallButtonOver.png",
+		--onPress = drawNormal,
+		text = "Shop",
+		textColor = {255,255,255},
+		size = 16,
+		emboss = true,
+		x = xcenter,
+		y = ycenter + 120
+	}
+	splashGroup:insert(whiteBG)
+	splashGroup:insert(playBt)
+	splashGroup:insert(shopBt)
 	splashGroup:insert(splashBG)
-	timer.performWithDelay(2000, gameStage )
+	
+	--timer.performWithDelay(2000, gameStage )
 end
 
 function levelStage()
@@ -155,7 +189,10 @@ function setScore(number)
 end
 
 function gameStage()
-	--splashGroup:removeSelf()
+	if not splashGroup then
+		splashGroup:removeSelf()
+	end
+	
 	isStop = false
 	isRight = true
 	-- water background
