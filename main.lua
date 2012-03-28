@@ -13,7 +13,7 @@ function splash()
 	
 	local whiteBG = display.newRect( 0 , 0 , display.contentWidth, display.contentHeight)
 	--whiteBG:setFillColor(255,255,255)
-	local splashBG = display.newImage("graphics/logo.png")
+	local splashBG = display.newImage("images/logo.png")
 	
 	--splashBG.xScale, splashBG.yScale = .8, .8
 	
@@ -21,8 +21,8 @@ function splash()
 	splashBG.x = xcenter
 	
 	local playBt = ui.newButton{
-		default = "graphics/smallButton.png",
-		over = "graphics/smallButtonOver.png",
+		default = "images/smallButton.png",
+		over = "images/smallButtonOver.png",
 		onRelease = gameStage,
 		text = "Play",
 		textColor = {255,255,255},
@@ -33,8 +33,8 @@ function splash()
 	}
 	
 	local shopBt = ui.newButton{
-		default = "graphics/smallButton.png",
-		over = "graphics/smallButtonOver.png",
+		default = "images/smallButton.png",
+		over = "images/smallButtonOver.png",
 		--onPress = drawNormal,
 		text = "Shop",
 		textColor = {255,255,255},
@@ -55,10 +55,10 @@ function levelStage()
 	splashGroup:removeSelf()
 	levelStageGroup = display.newGroup()
 	
-	local lakeBG = display.newImage("graphics/lakebg.jpg", true)
+	local lakeBG = display.newImage("images/lakebg.jpg", true)
 	levelStageGroup:insert(lakeBG)
 	
-	local fishingPoint =  display.newImage("graphics/buoy_v1.png")
+	local fishingPoint =  display.newImage("images/buoy_v1.png")
 	levelStageGroup:insert(fishingPoint)
 	
 	local levelText = display.newText("Easy", 0 , 10, "Helvetica", 26 )
@@ -157,21 +157,21 @@ function onTouch( event )
 end
 
 function showResult(x)
-	hitArea = display.newImage("graphics/bad_circle_v1.png")
+	hitArea = display.newImage("images/bad_circle_v1.png")
 	hitArea.x, hitArea.y = fish.x, fish.y
 	hitArea.xScale, hitArea.yScale = .5 , .5
 	
 	if (x < perfectRange) then
-		imageResult = display.newImage("graphics/perfect_without_circle_v1.png")
+		imageResult = display.newImage("images/perfect_without_circle_v1.png")
 		setScore(80)
 	elseif (x < greatRange) then
-		imageResult = display.newImage("graphics/great_without_cricle_v1.png")
+		imageResult = display.newImage("images/great_without_cricle_v1.png")
 		setScore(40)
 	elseif (x < goodRange) then
-		imageResult = display.newImage("graphics/good_without_circle_v1.png")
+		imageResult = display.newImage("images/good_without_circle_v1.png")
 		setScore(20)
 	else 
-		imageResult = display.newImage("graphics/bad_without_circle_v1.png")
+		imageResult = display.newImage("images/bad_without_circle_v1.png")
 		setScore(-30)
 	end
 	
@@ -189,14 +189,14 @@ function setScore(number)
 end
 
 function gameStage()
-	if not splashGroup then
-		splashGroup:removeSelf()
-	end
+	
+	display.remove(splashGroup)
+
 	
 	isStop = false
 	isRight = true
 	-- water background
-	background = display.newImage("graphics/background.jpg", true)
+	background = display.newImage("images/background.jpg", true)
 	
 	-- center screen
 	xpos,ypos = xcenter, ycenter
@@ -205,7 +205,7 @@ function gameStage()
 	--fish = display.newImage("fish.gif", xcenter, ycenter)
 	--fish.myName = "fish"
 
-	local sheet = sprite.newSpriteSheet("graphics/fish_sprite.png", 31, 31)
+	local sheet = sprite.newSpriteSheet("images/fish_sprite.png", 31, 31)
 	local spriteSet = sprite.newSpriteSet(sheet, 1, 9)
 	sprite.add( spriteSet, "fish", 1, 9, 800, 0 )
 	
@@ -218,12 +218,12 @@ function gameStage()
 	fish:play()
 	
 	-- fish bar
-	fishBar = display.newImage("graphics/fishing_bar_v1.png", true)
+	fishBar = display.newImage("images/fishing_bar_v1.png", true)
 	fishBar.x, fishBar.y = display.contentWidth*0.5,15
 	fishBar.xScale, fishBar.yScale = .3, .5
 	
 	-- fishScore
-	fishScore = display.newImage("graphics/fish_ani_0.png", xcenter , 0)
+	fishScore = display.newImage("images/fish_ani_0.png", xcenter , 0)
 	fishScore:scale(-1, 1)
 	--fishScore.xScale, fishScore.yScale = .2, .2
 	
