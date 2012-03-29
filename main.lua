@@ -1,5 +1,5 @@
-require "sprite"
 require "ui"
+local grabber = require("SpriteGrabber")
 
 -- hidden status bar
 display.setStatusBar (display.HiddenStatusBar)
@@ -205,17 +205,9 @@ function gameStage()
 	--fish = display.newImage("fish.gif", xcenter, ycenter)
 	--fish.myName = "fish"
 
-	local sheet = sprite.newSpriteSheet("images/fish_sprite.png", 31, 31)
-	local spriteSet = sprite.newSpriteSet(sheet, 1, 9)
-	sprite.add( spriteSet, "fish", 1, 9, 800, 0 )
-	
-	fish = sprite.newSprite( spriteSet )
-	fish.x = xcenter
-	fish.y = ycenter
-	fish:scale( 1.5 , 1.5 )
-	fish:scale(-1, 1)
-	fish:prepare("fish")
-	fish:play()
+	fishSprite = grabber.grabSheet("fishSprite")
+	fish = fishSprite:grabSprite("very-touch",true,{swim={1,15,1000,0}})
+	fish:playClip("swim")
 	
 	-- fish bar
 	fishBar = display.newImage("images/fishing_bar_v1.png", true)
