@@ -16,17 +16,23 @@ display.setStatusBar (display.HiddenStatusBar)
 
 xcenter, ycenter = display.contentWidth*0.5,display.contentHeight*0.5
 Rad2Deg = 180.0 / math.pi;
+dataList = {}
 
 function gotoShopScreen()
-	director:changeScene( "menuScreen", "moveFromRight" )
+	director:changeScene( "shopScreen", "flip" )
 end
 
 function gotoGameScreen()
-	director:changeScene( "gameStageScreen", "moveFromRight" )
+	director:changeScene( "gameStageScreen", "flip" )
 end
 
 function gotoMainScreen()
-	director:changeScene("splashScreen", "moveFromLeft")
+	director:changeScene("splashScreen", "flip")
+end
+
+function gotoListScreen(data)
+	dataList = data
+	director:changeScene("listScreen", "fade")
 end
 
 function levelStage()

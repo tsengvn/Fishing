@@ -1,7 +1,7 @@
 module(..., package.seeall)
 
 --====================================================================--
--- SCENE: MENU - FIRST SCREEN
+-- SCENE: LIST SCREEN - USED FOR DISPLAYING ITEM IN SHOP
 --====================================================================--
 
 --[[
@@ -26,9 +26,9 @@ new = function ()
 	
 	local localGroup = display.newGroup()
 	
-	local rodData = sourceData.getRodData()
+	--local rodData = sourceData.getRodData()
 	local myList = tableView.newList{
-		data=rodData,
+		data=dataList,
 		default="images/listItemBg.png",
 		over="images/listItemBg_over.png",
 		backgroundColor={255,2552,255},
@@ -61,24 +61,26 @@ new = function ()
 	
 	
 	localGroup:insert(myList)
-	local navBar = ui.newButton{
-		default = "images/navBar.png",
-		onRelease = scrollToTop
-	}
+	local navBar = display.newImage("images/navBar.png", true)
+	
 	navBar.x = display.contentWidth*.5
 	navBar.y = math.floor(display.screenOriginY + navBar.height*0.5)
-	myList.y = navBar.y + navBar.height
+	myList.y = navBar.height
 	localGroup:insert(navBar)
 	
 	local backBtn = ui.newButton{ 
 		default = "images/backButton.png", 
 		over = "images/backButton_over.png", 
-		onRelease = gotoMainScreen
+		onRelease = gotoShopScreen
 	}
-	backBtn.x = math.floor(backBtn.width/2) 
-	backBtn.y = navBar.y / 2 + backBtn.height/2
+	backBtn.x = math.floor(backBtn.width/2) + 5
+	backBtn.y = navBar.height/2
 
 	localGroup:insert(backBtn)
+	
+	local title = display.newText ( "Rod", 0, 0, native.systemFont, 16)
+	title.x = xcenter
+	title.y = navBar.height/2
 	
 	return localGroup
 	
