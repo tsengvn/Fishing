@@ -60,6 +60,11 @@ local mainGroup = display.newGroup()
 --====================================================================--
 
 local main = function ()
+	settings:storeIfNew("gold", 0)
+	settings:storeIfNew("point", 0)
+	settings:storeIfNew("hook", 1)
+	settings:storeIfNew("bait", 1)
+	settings:storeIfNew("rod", 1)
 	
 	------------------
 	-- Add the group from director class

@@ -131,7 +131,7 @@ function getHookData()
 	}
 end
 
-function getBailtData()
+function getBaitData()
 	return {
 		{
 			id = 1,

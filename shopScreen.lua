@@ -30,6 +30,30 @@ new = function ()
 	--whiteBG:setFillColor(255,255,255)
 	localGroup:insert(whiteBG)
 	
+	local pointText = display.newText("Point: ", 0, 10, native.systemFont, 16)
+	pointText.text = "Point: " .. settings:retrieve("gold")
+	pointText:setTextColor(0,0,0)
+	pointText.x = xcenter
+	localGroup:insert(pointText)
+	
+	local rodText = display.newText("Point: ", 0, 30, native.systemFont, 14)
+	rodText.text = "Rod: " .. sourceData.getRodData()[settings:retrieve("rod")].name
+	rodText:setTextColor(0,0,0)
+	rodText.x = xcenter
+	localGroup:insert(rodText)
+	
+	local hookText = display.newText("Hook: ", 0, 50, native.systemFont, 14)
+	hookText.text = "Hook: " .. sourceData.getHookData()[settings:retrieve("hook")].name
+	hookText:setTextColor(0,0,0)
+	hookText.x = xcenter
+	localGroup:insert(hookText)
+	
+	local baitText = display.newText("Point: ", 0, 70, native.systemFont, 14)
+	baitText.text = "Bait: " .. sourceData.getBaitData()[settings:retrieve("bait")].name
+	baitText:setTextColor(0,0,0)
+	baitText.x = xcenter
+	localGroup:insert(baitText)
+	
 	local rodBtn = ui.newButton{
 		default = "images/smallButton.png",
 		over = "images/smallButtonOver.png",

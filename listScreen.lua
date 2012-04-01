@@ -78,7 +78,7 @@ new = function ()
 
 	localGroup:insert(backBtn)
 	
-	local title = display.newText ( "Rod", 0, 0, native.systemFont, 16)
+	local title = display.newText ( "Shop", 0, 0, native.systemFont, 16)
 	title.x = xcenter
 	title.y = navBar.height/2
 	
