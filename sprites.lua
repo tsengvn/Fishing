@@ -17,9 +17,108 @@ function getSpriteSheetData()
 		frames = {
 		
 			{
+				name = "Hook_BasicHook.png",
+				spriteColorRect = { x = 32, y = 4, width = 21, height = 75 }, 
+				textureRect = { x = 49, y = 83, width = 21, height = 75 }, 
+				spriteSourceSize = { width = 81, height = 81 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
+				name = "Hook_BeginnerHook.png",
+				spriteColorRect = { x = 32, y = 7, width = 18, height = 67 }, 
+				textureRect = { x = 145, y = 83, width = 18, height = 67 }, 
+				spriteSourceSize = { width = 80, height = 81 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
+				name = "Hook_ClearStream.png",
+				spriteColorRect = { x = 5, y = 5, width = 71, height = 75 }, 
+				textureRect = { x = 72, y = 83, width = 71, height = 75 }, 
+				spriteSourceSize = { width = 81, height = 81 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
+				name = "Hook_TrapOfFairy.png",
+				spriteColorRect = { x = 19, y = 2, width = 41, height = 76 }, 
+				textureRect = { x = 459, y = 0, width = 41, height = 76 }, 
+				spriteSourceSize = { width = 81, height = 80 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
+				name = "Hook_VirtuosityHook.png",
+				spriteColorRect = { x = 18, y = 2, width = 47, height = 76 }, 
+				textureRect = { x = 0, y = 83, width = 47, height = 76 }, 
+				spriteSourceSize = { width = 81, height = 80 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
+				name = "Rod_AceStrong.png",
+				spriteColorRect = { x = 6, y = 2, width = 71, height = 78 }, 
+				textureRect = { x = 164, y = 0, width = 71, height = 78 }, 
+				spriteSourceSize = { width = 81, height = 80 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
+				name = "Rod_BambooRod.png",
+				spriteColorRect = { x = 3, y = 2, width = 75, height = 77 }, 
+				textureRect = { x = 382, y = 0, width = 75, height = 77 }, 
+				spriteSourceSize = { width = 81, height = 81 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
+				name = "Rod_BeginnerRod.png",
+				spriteColorRect = { x = 6, y = 1, width = 70, height = 77 }, 
+				textureRect = { x = 310, y = 0, width = 70, height = 77 }, 
+				spriteSourceSize = { width = 80, height = 81 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
+				name = "Rod_Fantasy.png",
+				spriteColorRect = { x = 0, y = 0, width = 81, height = 81 }, 
+				textureRect = { x = 81, y = 0, width = 81, height = 81 }, 
+				spriteSourceSize = { width = 81, height = 81 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
+				name = "Rod_GodOfWater.png",
+				spriteColorRect = { x = 5, y = 2, width = 71, height = 78 }, 
+				textureRect = { x = 237, y = 0, width = 71, height = 78 }, 
+				spriteSourceSize = { width = 81, height = 80 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
+				name = "Rod_KingMountain.png",
+				spriteColorRect = { x = 2, y = 0, width = 79, height = 81 }, 
+				textureRect = { x = 0, y = 0, width = 79, height = 81 }, 
+				spriteSourceSize = { width = 81, height = 81 }, 
+				spriteTrimmed = true,
+				textureRotated = false
+			},
+		
+			{
 				name = "easy1.png",
 				spriteColorRect = { x = 0, y = 0, width = 48, height = 31 }, 
-				textureRect = { x = 0, y = 0, width = 48, height = 31 }, 
+				textureRect = { x = 362, y = 124, width = 48, height = 31 }, 
 				spriteSourceSize = { width = 48, height = 31 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -28,7 +127,7 @@ function getSpriteSheetData()
 			{
 				name = "easy2.png",
 				spriteColorRect = { x = 0, y = 0, width = 48, height = 31 }, 
-				textureRect = { x = 50, y = 0, width = 48, height = 31 }, 
+				textureRect = { x = 412, y = 124, width = 48, height = 31 }, 
 				spriteSourceSize = { width = 48, height = 31 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -37,7 +136,7 @@ function getSpriteSheetData()
 			{
 				name = "easy3.png",
 				spriteColorRect = { x = 0, y = 0, width = 48, height = 31 }, 
-				textureRect = { x = 100, y = 0, width = 48, height = 31 }, 
+				textureRect = { x = 262, y = 124, width = 48, height = 31 }, 
 				spriteSourceSize = { width = 48, height = 31 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -46,7 +145,7 @@ function getSpriteSheetData()
 			{
 				name = "easy4.png",
 				spriteColorRect = { x = 0, y = 0, width = 48, height = 31 }, 
-				textureRect = { x = 150, y = 0, width = 48, height = 31 }, 
+				textureRect = { x = 312, y = 124, width = 48, height = 31 }, 
 				spriteSourceSize = { width = 48, height = 31 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -55,7 +154,7 @@ function getSpriteSheetData()
 			{
 				name = "easy5.png",
 				spriteColorRect = { x = 0, y = 0, width = 48, height = 31 }, 
-				textureRect = { x = 200, y = 0, width = 48, height = 31 }, 
+				textureRect = { x = 341, y = 241, width = 48, height = 31 }, 
 				spriteSourceSize = { width = 48, height = 31 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -64,7 +163,7 @@ function getSpriteSheetData()
 			{
 				name = "easy6.png",
 				spriteColorRect = { x = 0, y = 0, width = 48, height = 31 }, 
-				textureRect = { x = 250, y = 0, width = 48, height = 31 }, 
+				textureRect = { x = 291, y = 241, width = 48, height = 31 }, 
 				spriteSourceSize = { width = 48, height = 31 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -73,7 +172,7 @@ function getSpriteSheetData()
 			{
 				name = "medium00.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 300, y = 0, width = 50, height = 39 }, 
+				textureRect = { x = 260, y = 161, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -82,7 +181,7 @@ function getSpriteSheetData()
 			{
 				name = "medium01.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 352, y = 0, width = 50, height = 39 }, 
+				textureRect = { x = 321, y = 83, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -91,7 +190,7 @@ function getSpriteSheetData()
 			{
 				name = "medium02.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 404, y = 0, width = 50, height = 39 }, 
+				textureRect = { x = 217, y = 83, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -100,7 +199,7 @@ function getSpriteSheetData()
 			{
 				name = "medium03.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 456, y = 0, width = 50, height = 39 }, 
+				textureRect = { x = 208, y = 161, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -109,7 +208,7 @@ function getSpriteSheetData()
 			{
 				name = "medium04.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 0, y = 41, width = 50, height = 39 }, 
+				textureRect = { x = 425, y = 83, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -118,7 +217,7 @@ function getSpriteSheetData()
 			{
 				name = "medium05.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 52, y = 41, width = 50, height = 39 }, 
+				textureRect = { x = 52, y = 161, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -127,7 +226,7 @@ function getSpriteSheetData()
 			{
 				name = "medium06.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 104, y = 41, width = 50, height = 39 }, 
+				textureRect = { x = 156, y = 161, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -136,7 +235,7 @@ function getSpriteSheetData()
 			{
 				name = "medium07.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 156, y = 41, width = 50, height = 39 }, 
+				textureRect = { x = 104, y = 161, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -145,7 +244,7 @@ function getSpriteSheetData()
 			{
 				name = "medium08.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 208, y = 41, width = 50, height = 39 }, 
+				textureRect = { x = 165, y = 83, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -154,7 +253,7 @@ function getSpriteSheetData()
 			{
 				name = "medium09.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 260, y = 41, width = 50, height = 39 }, 
+				textureRect = { x = 269, y = 83, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -163,7 +262,7 @@ function getSpriteSheetData()
 			{
 				name = "medium10.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 312, y = 41, width = 50, height = 39 }, 
+				textureRect = { x = 373, y = 83, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -172,7 +271,7 @@ function getSpriteSheetData()
 			{
 				name = "medium11.png",
 				spriteColorRect = { x = 0, y = 0, width = 50, height = 39 }, 
-				textureRect = { x = 364, y = 41, width = 50, height = 39 }, 
+				textureRect = { x = 0, y = 161, width = 50, height = 39 }, 
 				spriteSourceSize = { width = 50, height = 39 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -181,7 +280,7 @@ function getSpriteSheetData()
 			{
 				name = "touch00.png",
 				spriteColorRect = { x = 0, y = 0, width = 48, height = 29 }, 
-				textureRect = { x = 416, y = 41, width = 48, height = 29 }, 
+				textureRect = { x = 441, y = 241, width = 48, height = 29 }, 
 				spriteSourceSize = { width = 48, height = 29 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -190,7 +289,7 @@ function getSpriteSheetData()
 			{
 				name = "touch01.png",
 				spriteColorRect = { x = 0, y = 0, width = 48, height = 30 }, 
-				textureRect = { x = 0, y = 82, width = 48, height = 30 }, 
+				textureRect = { x = 391, y = 241, width = 48, height = 30 }, 
 				spriteSourceSize = { width = 48, height = 30 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -199,7 +298,7 @@ function getSpriteSheetData()
 			{
 				name = "touch02.png",
 				spriteColorRect = { x = 0, y = 0, width = 48, height = 32 }, 
-				textureRect = { x = 50, y = 82, width = 48, height = 32 }, 
+				textureRect = { x = 212, y = 124, width = 48, height = 32 }, 
 				spriteSourceSize = { width = 48, height = 32 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -208,7 +307,7 @@ function getSpriteSheetData()
 			{
 				name = "touch03.png",
 				spriteColorRect = { x = 0, y = 0, width = 45, height = 35 }, 
-				textureRect = { x = 100, y = 82, width = 45, height = 35 }, 
+				textureRect = { x = 165, y = 124, width = 45, height = 35 }, 
 				spriteSourceSize = { width = 45, height = 35 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -217,7 +316,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch00.png",
 				spriteColorRect = { x = 0, y = 0, width = 52, height = 37 }, 
-				textureRect = { x = 147, y = 82, width = 52, height = 37 }, 
+				textureRect = { x = 129, y = 241, width = 52, height = 37 }, 
 				spriteSourceSize = { width = 52, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -226,7 +325,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch01.png",
 				spriteColorRect = { x = 0, y = 0, width = 56, height = 37 }, 
-				textureRect = { x = 201, y = 82, width = 56, height = 37 }, 
+				textureRect = { x = 116, y = 202, width = 56, height = 37 }, 
 				spriteSourceSize = { width = 56, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -235,7 +334,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch02.png",
 				spriteColorRect = { x = 0, y = 0, width = 66, height = 37 }, 
-				textureRect = { x = 259, y = 82, width = 66, height = 37 }, 
+				textureRect = { x = 242, y = 202, width = 66, height = 37 }, 
 				spriteSourceSize = { width = 66, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -244,7 +343,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch03.png",
 				spriteColorRect = { x = 0, y = 0, width = 73, height = 37 }, 
-				textureRect = { x = 327, y = 82, width = 73, height = 37 }, 
+				textureRect = { x = 0, y = 241, width = 73, height = 37 }, 
 				spriteSourceSize = { width = 73, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -253,7 +352,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch04.png",
 				spriteColorRect = { x = 0, y = 0, width = 66, height = 37 }, 
-				textureRect = { x = 402, y = 82, width = 66, height = 37 }, 
+				textureRect = { x = 310, y = 202, width = 66, height = 37 }, 
 				spriteSourceSize = { width = 66, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -262,7 +361,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch05.png",
 				spriteColorRect = { x = 0, y = 0, width = 56, height = 37 }, 
-				textureRect = { x = 0, y = 121, width = 56, height = 37 }, 
+				textureRect = { x = 441, y = 161, width = 56, height = 37 }, 
 				spriteSourceSize = { width = 56, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -271,7 +370,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch06.png",
 				spriteColorRect = { x = 0, y = 0, width = 52, height = 37 }, 
-				textureRect = { x = 58, y = 121, width = 52, height = 37 }, 
+				textureRect = { x = 75, y = 241, width = 52, height = 37 }, 
 				spriteSourceSize = { width = 52, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -280,7 +379,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch07.png",
 				spriteColorRect = { x = 0, y = 0, width = 52, height = 37 }, 
-				textureRect = { x = 112, y = 121, width = 52, height = 37 }, 
+				textureRect = { x = 387, y = 161, width = 52, height = 37 }, 
 				spriteSourceSize = { width = 52, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -289,7 +388,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch08.png",
 				spriteColorRect = { x = 0, y = 0, width = 52, height = 37 }, 
-				textureRect = { x = 166, y = 121, width = 52, height = 37 }, 
+				textureRect = { x = 237, y = 241, width = 52, height = 37 }, 
 				spriteSourceSize = { width = 52, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -298,7 +397,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch09.png",
 				spriteColorRect = { x = 0, y = 0, width = 56, height = 37 }, 
-				textureRect = { x = 220, y = 121, width = 56, height = 37 }, 
+				textureRect = { x = 0, y = 202, width = 56, height = 37 }, 
 				spriteSourceSize = { width = 56, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -307,7 +406,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch10.png",
 				spriteColorRect = { x = 0, y = 0, width = 66, height = 37 }, 
-				textureRect = { x = 278, y = 121, width = 66, height = 37 }, 
+				textureRect = { x = 378, y = 202, width = 66, height = 37 }, 
 				spriteSourceSize = { width = 66, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -316,7 +415,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch11.png",
 				spriteColorRect = { x = 0, y = 0, width = 73, height = 37 }, 
-				textureRect = { x = 346, y = 121, width = 73, height = 37 }, 
+				textureRect = { x = 312, y = 161, width = 73, height = 37 }, 
 				spriteSourceSize = { width = 73, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -325,7 +424,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch12.png",
 				spriteColorRect = { x = 0, y = 0, width = 66, height = 37 }, 
-				textureRect = { x = 421, y = 121, width = 66, height = 37 }, 
+				textureRect = { x = 174, y = 202, width = 66, height = 37 }, 
 				spriteSourceSize = { width = 66, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -334,7 +433,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch13.png",
 				spriteColorRect = { x = 0, y = 0, width = 56, height = 37 }, 
-				textureRect = { x = 0, y = 160, width = 56, height = 37 }, 
+				textureRect = { x = 58, y = 202, width = 56, height = 37 }, 
 				spriteSourceSize = { width = 56, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -343,7 +442,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch14.png",
 				spriteColorRect = { x = 0, y = 0, width = 52, height = 37 }, 
-				textureRect = { x = 58, y = 160, width = 52, height = 37 }, 
+				textureRect = { x = 183, y = 241, width = 52, height = 37 }, 
 				spriteSourceSize = { width = 52, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
@@ -352,7 +451,7 @@ function getSpriteSheetData()
 			{
 				name = "very-touch15.png",
 				spriteColorRect = { x = 0, y = 0, width = 52, height = 37 }, 
-				textureRect = { x = 112, y = 160, width = 52, height = 37 }, 
+				textureRect = { x = 446, y = 202, width = 52, height = 37 }, 
 				spriteSourceSize = { width = 52, height = 37 }, 
 				spriteTrimmed = true,
 				textureRotated = false
