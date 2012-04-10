@@ -16,6 +16,16 @@ module(..., package.seeall)
 
 
 --]]
+percent = {}
+percent.good = 1/5
+percent.great = 1/7
+percent.perfect = 1/9
+percent.other = 1 - percent.good - percent.great - percent.perfect
+
+range = {}
+range.good = 130
+range.great = 80
+range.perfect = 30
 
 new = function ()
 	
@@ -51,23 +61,23 @@ new = function ()
 	--fishScore.xScale, fishScore.yScale = .2, .2
 	localGroup:insert(fishScore)
 	
-	perfectRange, greatRange, goodRange = 30, 80, 130
+	--perfectRange, greatRange, goodRange = 30, 80, 130
 	-- circle pole perfect
-	circleA = display.newCircle(xcenter, ycenter, perfectRange)
+	circleA = display.newCircle(xcenter, ycenter, range.perfect)
 	circleA:setFillColor(24,24,24)
 	circleA.alpha = 0.2
 	circleA.myName = "circle"
 	localGroup:insert(circleA)
 
 	-- circle pole great
-	circleB = display.newCircle(xcenter, ycenter, greatRange)
+	circleB = display.newCircle(xcenter, ycenter, range.great)
 	circleB:setFillColor(24,24,24)
 	circleB.alpha = 0.2
 	circleB.myName = "circle"
 	localGroup:insert(circleB)
 
 	-- circle pole good
-	circleC = display.newCircle(xcenter, ycenter, goodRange)
+	circleC = display.newCircle(xcenter, ycenter, range.good)
 	circleC.alpha = 0.2
 	circleC.myName = "circle"
 	localGroup:insert(circleC)
@@ -95,6 +105,14 @@ function runFish()
 		if (isStop) then
 			return
 		end
+		
+		local angle = math.random(0, 360)
+		local dist = math.random(0, range.good)
+		print ("Dist " .. dist .. " angle " .. angle)
+		rX = dist * math.cos(angle)
+		rY = dist * math.sin(angle)
+		print ("rX " .. rX .. " rY " .. rY)
+		--[[
 		luckyNo = math.random(1,20)
 		
 		if (luckyNo % 11 == 0) then
@@ -106,9 +124,10 @@ function runFish()
 		else 
 			rX, rY = math.random(-xcenter, xcenter), math.random(-ycenter, ycenter)
 		end
-		
+				--]]
 		xpos = rX + xcenter;
         ypos = rY + ycenter;
+
 		--print (xpos)
 		--xpos = xpos + ( 2.2 * xdirection );
         -- ypos = ypos + ( 2.2 * ydirection );
@@ -123,7 +142,7 @@ function runFish()
         end
 		--]]
 		local angle = math.atan2(ypos - fish.y, xpos - fish.x) * Rad2Deg
-		print(angle);
+		--print(angle);
 		
 		
 		if (xpos - fish.x < 0 and isRight) then
@@ -185,13 +204,13 @@ function showResult(x)
 	hitArea.x, hitArea.y = fish.x, fish.y
 	hitArea.xScale, hitArea.yScale = .5 , .5
 	
-	if (x < perfectRange) then
+	if (x < range.perfect) then
 		imageResult = display.newImage("images/perfect_without_circle_v1.png")
 		setScore(80)
-	elseif (x < greatRange) then
+	elseif (x < range.great) then
 		imageResult = display.newImage("images/great_without_cricle_v1.png")
 		setScore(40)
-	elseif (x < goodRange) then
+	elseif (x < range.good) then
 		imageResult = display.newImage("images/good_without_circle_v1.png")
 		setScore(20)
 	else 
@@ -210,4 +229,13 @@ function setScore(number)
 	-- convert to coordinate, minus score
 	number = -number
 	fishScore:translate(number, 0)
+end
+
+function getDestination()
+	local r = math.random()
+	local p = 0 + percent.perfect
+	if r < p then
+		return range.perfect
+	end
+	
 end
