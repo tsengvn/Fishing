@@ -17,7 +17,7 @@ module(..., package.seeall)
 
 --]]
 
-new = function ()
+function new()
 	
 	------------------
 	-- Groups

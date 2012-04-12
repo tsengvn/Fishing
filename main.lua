@@ -4,10 +4,12 @@ grabber 	= require("SpriteGrabber")
 sprites 	= grabber.grabSheet("sprites")
 tableView 	= require("tableView")
 sourceData 	= require("data")
+viewController = require("viewController")
 
 require( "ice" )
 settings 	= ice:loadBox( "settings" )
 director 	= require("director")
+widget 		= require "widget"
 
 
 -- hidden status bar
@@ -33,6 +35,10 @@ end
 function gotoListScreen(data)
 	dataList = data
 	director:changeScene("listScreen", "fade")
+end
+
+function gotoTabScreen()
+	
 end
 
 function levelStage()
@@ -76,7 +82,7 @@ local main = function ()
 	-- First Screen is Splash Screen, appear with Fade Effect
 	------------------
 	
-	director:changeScene("splashScreen", "fade")
+	director:changeScene("tabScreen", "fade")
 	
 	return true
 end
