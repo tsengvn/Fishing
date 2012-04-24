@@ -77,13 +77,20 @@ function newTabBar(params)
 		tabBar:insert(tab)
 		
 		local numberOfTabs = #tabs
-		local tabButtonWidth = tab.width
+		
+		--tab.width = viewableScreenW / numberOfTabs
+		--tab.height = tab.width
+
+		scaleButton = (screenW / numberOfTabs) / tab.contentWidth
+		tab:scale(1-scaleButton, 1-scaleButton)
+
+		local tabButtonWidth = tab.contentWidth
 		local totalButtonWidth = tabButtonWidth * numberOfTabs
 		local tabSpacing = (screenW - totalButtonWidth)/(numberOfTabs+1)
 
-		tab.x = math.floor(tab.width*(i-1) + tabSpacing * i + tab.width*0.5)
-		if tabBG then tab.y = math.floor(tabBG.height*0.5) else tab.y = math.floor(tab.height*0.5) end
-
+		tab.x = math.floor(tab.contentWidth*(i-1) + tabSpacing * i + tab.contentWidth*0.5)
+		if tabBG then tab.y = math.floor(tabBG.contentHeight*0.5) else tab.y = math.floor(tab.contentHeight*0.5) end
+		
 		tab.id = i
 	end
 
@@ -91,25 +98,29 @@ function newTabBar(params)
 	tabBar.x = 0
 
 	tabBar.selected = function(target)
-			if not target then target = tabBar[2] end
-			if tabBar.highlight then tabBar:remove(tabBar.highlight) end
-			
-			local highlight = ui.newButton{ 
-					default = over[target.id], 
-					over = default[target.id], 
-					onRelease = onRelease,
-					text = tabs[target.id],
-					font = font,
-					size = size,
-					offset = offset
-				}
-			highlight.id = target.id
-			tabBar:insert(highlight)
-			
-			highlight.x = target.x
-			highlight.y = target.y 
+		if not target then target = tabBar[1] end
+		if tabBar.highlight then tabBar:remove(tabBar.highlight) end
 
-			tabBar.highlight = highlight
+		local highlight = ui.newButton{ 
+			default = over[target.id], 
+			over = default[target.id], 
+			onRelease = onRelease,
+			text = tabs[target.id],
+			font = font,
+			size = size,
+			offset = offset
+		}
+		local numberOfTabs = #tabs
+		scaleButton = (screenW / numberOfTabs) / highlight.contentWidth
+		highlight:scale(1-scaleButton, 1-scaleButton)
+		
+		highlight.id = target.id
+		tabBar:insert(highlight)
+
+		highlight.x = target.x
+		highlight.y = target.y 
+
+		tabBar.highlight = highlight
 	end
 		
 	return tabBar

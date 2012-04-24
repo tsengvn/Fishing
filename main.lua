@@ -29,7 +29,10 @@ function gotoGameScreen()
 end
 
 function gotoMainScreen()
-	director:changeScene("splashScreen", "flip")
+	--mainView.remove(director.directorView)
+	initMainScreen()
+	tabView:insert(director.directorView)
+	director:changeScene("shopScreen", "flip")
 end
 
 function gotoListScreen(data)
@@ -37,8 +40,9 @@ function gotoListScreen(data)
 	director:changeScene("listScreen", "fade")
 end
 
-function gotoTabScreen()
-	
+function gotoSplashScreen()
+	--mainView:insert(director.directorView)
+	director:changeScene("splashScreen", "fade")
 end
 
 function levelStage()
@@ -58,8 +62,7 @@ function levelStage()
 end
 
 
-
-local mainGroup = display.newGroup()
+local mainView, tabView, currentScreen, tabBar
 
 --====================================================================--
 -- MAIN FUNCTION
@@ -75,14 +78,18 @@ local main = function ()
 	------------------
 	-- Add the group from director class
 	------------------
-	
-	mainGroup:insert(director.directorView)
+	mainView = display.newGroup()
+	gotoSplashScreen()
+	timer.performWithDelay(2000, gotoMainScreen )
+
+	--init()
+	--tabView:insert(director.directorView)
 	
 	------------------
 	-- First Screen is Splash Screen, appear with Fade Effect
 	------------------
 	
-	director:changeScene("tabScreen", "fade")
+	--director:changeScene("shopScreen", "fade")
 	
 	return true
 end
@@ -90,6 +97,47 @@ end
 --====================================================================--
 -- BEGIN
 --====================================================================--
+function initMainScreen()
+	--Create a group that contains the entire screen and tab bar
 
+	--Create a group that contains the screens beneath the tab bar
+	tabView = display.newGroup()    
+	mainView:insert(tabView)
+
+	tabBar = viewController.newTabBar{
+		tabs = {"", "", "", "", ""}, 
+		onRelease = showScreen,
+		default = {"images/tab_fishing.png", "images/tab_shop.png","images/tab_champions.png","images/tab_treasure.png","images/tab_diary.png"},
+		over = {"images/tab_fishing_selected.png","images/tab_shop_selected.png","images/tab_champions_selected.png","images/tab_treasure_selected.png","images/tab_diary_selected.png"}
+	}
+
+	mainView:insert(tabBar)
+
+	tabBar.selected()
+	director:changeScene("shopScreen", "fade")
+	return true
+end
+
+function showScreen(event)
+        local t = event.target
+        local phase = event.phase
+
+        if phase == "ended" then 
+			if t.id == 1 then
+				director:changeScene("shopScreen", "fade")
+			elseif t.id == 2 then
+				director:changeScene("shopScreen", "fade")
+			elseif t.id == 3 then
+				director:changeScene("shopScreen", "fade")
+			elseif t.id == 4 then
+				director:changeScene("shopScreen", "fade")
+			elseif t.id == 5 then
+				director:changeScene("shopScreen", "fade")
+			end
+			tabBar.selected(t)
+        end
+
+        return true
+end
 main()
 
