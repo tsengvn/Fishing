@@ -21,12 +21,17 @@ Rad2Deg = 180.0 / math.pi;
 dataList = {}
 
 function gotoShopScreen()
-	director:changeScene( "shopScreen", "flip" )
+	director:changeScene( "tabShopScreen", "flip" )
+end
+
+function gotoShopListEquipmentScreen()
+	director:changeScene("tabShopEquipmentList", "flip")
 end
 
 function gotoGameScreen()
 	director:changeScene( "gameStageScreen", "flip" )
 end
+
 
 function gotoMainScreen()
 	--mainView.remove(director.directorView)
@@ -60,6 +65,7 @@ function levelStage()
 	levelText:setTextColor(0,125, 255)
 	levelStageGroup:insert(levelText)
 end
+
 
 
 local mainView, tabView, currentScreen, tabBar
@@ -114,7 +120,7 @@ function initMainScreen()
 	mainView:insert(tabBar)
 
 	tabBar.selected()
-	director:changeScene("shopScreen", "fade")
+	director:changeScene("tabGoFishingScreen", "fade")
 	return true
 end
 
@@ -124,9 +130,9 @@ function showScreen(event)
 
         if phase == "ended" then 
 			if t.id == 1 then
-				director:changeScene("shopScreen", "fade")
+				director:changeScene("tabGoFishingScreen", "fade")
 			elseif t.id == 2 then
-				director:changeScene("shopScreen", "fade")
+				director:changeScene("tabShopScreen", "fade")
 			elseif t.id == 3 then
 				director:changeScene("shopScreen", "fade")
 			elseif t.id == 4 then
