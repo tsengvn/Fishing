@@ -4,6 +4,8 @@ application =
                 {
                         width = 320,
                         height = 480,
-                        scale = "letterbox"
+                        scale = "zoomStretch",
+						xAlign = "left",
+						yAlign = "top"
                 },
  }     

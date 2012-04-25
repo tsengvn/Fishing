@@ -94,7 +94,8 @@ function newTabBar(params)
 		tab.id = i
 	end
 
-	tabBar.y = math.floor(screenH - tabBar.height - display.screenOriginY)
+	--tabBar.y = math.floor(screenH - tabBar.height - display.screenOriginY
+	tabBar.y = display.contentHeight - tabBar.height
 	tabBar.x = 0
 
 	tabBar.selected = function(target)
