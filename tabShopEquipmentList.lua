@@ -30,39 +30,6 @@ new = function ()
 	local background = display.newImage("images/background/BackGround_forAll.png", true)
 	
 	dataList = sourceData.getRodData()
-	-- local myList = tableView.newList{
-		-- data=dataList,
-		-- top=150,
-		-- bottom=50,
-		-- default="images/listItemBg.png",
-		-- over="images/listItemBg_over.png",
-		-- backgroundColor={255,2552,255},
-		-- callback = function( row )
-			-- local g = display.newGroup()
-			
-			-- local img = sprites:grabSprite(row.picture,true)
-			-- g:insert(img)
-			-- img.xScale = .8
-			-- img.yScale = .8
-			-- img.x = math.floor(img.width*0.5+5)
-			-- img.y = math.floor(img.height*0.5+5)
-			
-			-- local title =  display.newText( row.name, 0, 0, native.systemFontBold, 14 )
-			-- title:setTextColor(0,0,0)
-			-- g:insert(title)
-			-- title.x = title.width*0.5 + img.width + 20
-			-- title.y = 25
-
-			-- local subtitle =  display.newText( row.comment, 0, 0, 200, 50, native.systemFont, 12 )
-			-- subtitle:setTextColor(80,80,80)
-			-- g:insert(subtitle)
-			-- subtitle.x = subtitle.width*0.5 + img.width + 20
-			-- subtitle.y = title.y + title.height + 20
-			
-			-- return g
-		-- end
-	-- }
-	-- myList:addScrollBar()
 	local myList = widget.newTableView{
 		width = 320,
 		height = 280,
@@ -79,14 +46,10 @@ new = function ()
 				row.rowColor={ 70, 70, 130, 255 }
 
 			elseif event.phase == "swipeLeft" then
-				if text then
-					text.text = "Swiped row " .. event.index .. " LEFT."
-				end
+				
 
 			elseif event.phase == "swipeRight" then
-				if text then
-					text.text = "Swiped row " .. event.index .. " RIGHT."
-				end
+				
 
 			elseif event.phase == "release" then
 			
@@ -163,11 +126,18 @@ new = function ()
 	buttons.x = xcenter
 	
 	local goldIcon = display.newImage("images/icon_gold.png", 0, 90)
-	goldIcon.x = xcenter
+	goldIcon.x = xcenter - 50
 	local goldCount = display.newText(settings:retrieve("gold"), 0, 0, native.systemFontBold, 20)
 	goldCount.y = goldIcon.y
 	goldCount.x = goldIcon.x + goldIcon.width+ 5
 	goldCount:setTextColor(255,185,15)
+	
+	local pointIcon = display.newImage("images/icon_point.png", 0, 90)
+	pointIcon.x = xcenter + 10
+	local poitntCount = display.newText(settings:retrieve("point"), 0, 0, native.systemFontBold, 20)
+	poitntCount.y = pointIcon.y
+	poitntCount.x = pointIcon.x + pointIcon.width+ 5
+	poitntCount:setTextColor(0,0,255)
 	
 	
 	localGroup:insert(background)
